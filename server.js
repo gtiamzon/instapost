@@ -65,7 +65,14 @@ app.put("/post/:id", function(req,res){
   });
 });
 
-// destroy  /posts/:id - fucntional 
+// destroy DELETE  /posts/:id - fucntional 
+app.delete("/posts/:id", function(req,res){
+  // echo id
+  res.send({
+    message:"hit delete route",
+    id:req.params.id,
+  })
+});
 
 // SECTION SERVER BIND// 
 app.listen(PORT, ()=> {
