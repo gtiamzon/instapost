@@ -13,6 +13,9 @@ const PORT = 4000;
 
 // SECTION MIDDLE WARE// 
 
+// access body data
+app.use(express.urlencoded({extended=true}));
+
 // SECTION ROUTES//
 app.get("/", function(req,res){
   res.redirect("/posts");
@@ -30,8 +33,15 @@ app.get("/posts/new", function(req, res){
   res.send("post create page");
 });
 
-
 // create POST /posts
+app.post("/posts", function(req,res){
+  console.log(req.body);
+  //echo
+  res.send({
+    message: "hit the create route",
+    body: req.body,
+  })
+})
 
 // show GET /posts/:id - presentational
 app.get("/posts/:id", function(req, res){
