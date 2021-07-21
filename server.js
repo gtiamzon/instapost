@@ -25,13 +25,25 @@ app.get("/posts", function(req, res){
   res.send("post index");
 });
 
-// new GET /posts - presentational form
+// new GET /posts/new - presentational form
+app.get("/posts/new", function(req, res){
+  res.send("post create page");
+});
+
 
 // create POST /posts
 
 // show GET /posts/:id - presentational
+app.get("/posts/:id", function(req, res){
+  //echo param id
+  res.send(`post SHOW page id : ${req.params.id}`);
+});
 
 // edit GET /posts/:id/edit -presentational 
+app.get("/posts/:id/edit", function(req, res){
+  //echo param id
+  res.send(`post EDIT page id : ${req.params.id}`);
+});
 
 // update PUT /post/:id - functional 
 
