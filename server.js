@@ -56,6 +56,14 @@ app.get("/posts/:id/edit", function(req, res){
 });
 
 // update PUT /post/:id - functional 
+app.put("/post/:id", function(req,res){
+  //echo body data and id
+  res.send({
+    message: "Hit the update route",
+    body: req.body,
+    id: req.params.id,
+  });
+});
 
 // destroy  /posts/:id - fucntional 
 
