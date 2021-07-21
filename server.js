@@ -14,6 +14,28 @@ const PORT = 4000;
 // SECTION MIDDLE WARE// 
 
 // SECTION ROUTES//
+app.get("/", function(req,res){
+  res.redirect("/posts");
+});
+
+// post 
+
+// index GET - presentational
+app.get("/posts", function(req, res){
+  res.send("post index");
+});
+
+// new GET /posts - presentational form
+
+// create POST /posts
+
+// show GET /posts/:id - presentational
+
+// edit GET /posts/:id/edit -presentational 
+
+// update PUT /post/:id - functional 
+
+// destroy  /posts/:id - fucntional 
 
 // SECTION SERVER BIND// 
 app.listen(PORT, ()=> {
